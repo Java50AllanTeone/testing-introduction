@@ -13,7 +13,18 @@ class StringTests {
 
 	@Test
 	void testCompareTo() {
-		fail("Not yet implemented");
+		String str = "abcd";
+		
+		assertEquals(32, str.compareTo("Abcd"));
+		assertEquals(32, str.compareTo("aBcd"));
+		assertEquals(32, str.compareTo("abCd"));
+		assertEquals(32, str.compareTo("abcD"));
+		
+		assertTrue(str.compareTo("Abcdefg") > 0);
+		assertTrue(str.compareTo("A") > 0);
+		
+		assertFalse(str.compareTo("acde") > 0);
+		assertFalse(str.compareTo("abcde") > 0);
 	}
 
 	@Test
